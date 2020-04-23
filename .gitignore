@@ -1,0 +1,14 @@
+venv/
+*.pyc
+__pycache__/
+*.sqlite3
+*.sql
+.idea/
+/media/
+/static/
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
+/disruptionV2/*.bak
