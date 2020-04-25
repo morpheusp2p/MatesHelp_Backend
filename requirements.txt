@@ -70,3 +70,4 @@ wcwidth==0.1.9
 whichcraft==0.6.1
 django-dotenv==1.4.2
 python-dotenv==0.13.0
+whitenoise==4.1.3
