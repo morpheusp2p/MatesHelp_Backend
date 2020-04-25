@@ -1,1 +1,1 @@
-web: gunicorn herokugisproject.wsgi --log-file=-
+web: gunicorn mateshelp_web.wsgi --log-file=-
