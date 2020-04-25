@@ -140,3 +140,5 @@ STATIC_URL = '/static/'
 
 GDAL_LIBRARY_PATH = os.environ.get('GDAL_LIBRARY_PATH')
 GEOS_LIBRARY_PATH = os.environ.get('GEOS_LIBRARY_PATH')
+
+ALLOWED_HOSTS =['*']
