@@ -20,24 +20,14 @@ from django.views.generic.base import TemplateView
 from rest_framework import routers
 from locations import  views
 
+# register api endpoints
 router = routers.DefaultRouter()
 router.register(r'types', views.TypeViewSet)
 router.register(r'locations', views.LocationViewSet)
 
+# register build as root, api & admin urls
 urlpatterns = [
     path('',TemplateView.as_view(template_name='dist/index.html')),
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
 ]
-#
-#
-# from tutorial.quickstart import views
-#
-#
-#
-# # Wire up our API using automatic URL routing.
-# # Additionally, we include login URLs for the browsable API.
-# urlpatterns = [
-#     path('', include(router.urls)),
-#     path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
-# ]

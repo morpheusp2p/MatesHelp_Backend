@@ -1,6 +1,7 @@
 from django.contrib.gis.db import models
 
 class Type(models.Model):
+    # Type Model
     name = models.CharField(max_length=250)
 
     def __str__(self):
@@ -8,6 +9,7 @@ class Type(models.Model):
 
 
 class Location(models.Model):
+    # Location Model
     name = models.CharField(max_length=250)
     location = models.PointField()
     website = models.URLField(null=True, blank=True,)

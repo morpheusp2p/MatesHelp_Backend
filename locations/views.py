@@ -59,7 +59,7 @@ class WithinBoxFilterBackend(filters.BaseFilterBackend):
                     bbox = (xmin, ymin, xmax, ymax)
                     geom = Polygon.from_bbox(bbox)
 
-                    #Filter by both places on screen, and disruptions on screen
+                    #Filter polygon formed by above coordinates
                     queryset = queryset.filter(location__intersects=geom).distinct()
 
         return queryset
