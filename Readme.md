@@ -1,3 +1,5 @@
+Repository for MatesHelp Backend
+
 Virtual environment
 Before we install Django we will get you to install an extremely useful tool to help keep your coding environment tidy on your computer.
 
