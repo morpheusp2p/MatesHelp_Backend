@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.views.generic.base import TemplateView
 
 from rest_framework import routers
 from locations import  views
@@ -24,6 +25,7 @@ router.register(r'types', views.TypeViewSet)
 router.register(r'locations', views.LocationViewSet)
 
 urlpatterns = [
+    path('',TemplateView.as_view(template_name='dist/index.html')),
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
 ]
