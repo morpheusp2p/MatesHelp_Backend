@@ -24,6 +24,7 @@ class Command(BaseCommand):
             'LONG' : 32,
             'Suburb/Town': 5,
             'Address': 3,
+            'Address2': 4,
             'Website': 10,
             'Name': 0,
             'Category': 25
@@ -49,7 +50,7 @@ class Command(BaseCommand):
                 point_location = Point(float(entry[csv_key['LONG']]), float(entry[csv_key['LAT']]))
                 location_service, created = Location.objects.get_or_create(location = point_location)
                 location_service.name = entry[csv_key['Name']]
-                location_service.address = entry[csv_key['Address']]
+                location_service.address = (entry[csv_key['Address']] + ' '+ entry[csv_key['Address2']]).lstrip()
                 extracted_url = re.findall('https?://(?:[-\w.]|(?:%[\da-fA-F]{2}))+', entry[csv_key['Website']])
                 if len(extracted_url) == 0:
                     extracted_url = re.findall('http?://(?:[-\w.]|(?:%[\da-fA-F]{2}))+', entry[csv_key['Website']])

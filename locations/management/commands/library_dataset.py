@@ -32,14 +32,14 @@ class Command(BaseCommand):
                     clean_dataset.append(row)
                 count += 1
 
-        library_type, created = Type.objects.get_or_create(name = 'library')
+        library_type, created = Type.objects.get_or_create(name = 'Library/Community Services')
         library_type.save()
 
         for entry in clean_dataset:
             # print(int(entry[csv_key['LONG']]))
             point_location = Point(float(entry[csv_key['LONG']]), float(entry[csv_key['LAT']]))
             library, created = Location.objects.get_or_create(location = point_location)
-            library.name = 'Library Services'
+            library.name = 'Library Services - ' + entry[csv_key['Suburb/Town']]
             library.address = entry[csv_key['Address']]
             library.suburb = entry[csv_key['Suburb/Town']]
             library.type = library_type
