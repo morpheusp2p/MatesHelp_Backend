@@ -14,12 +14,15 @@ source venv/bin/activate
 
 And then clone the project
 
-After cloning the project, make sure you install all dependencies of geodjango using:
+After cloning the project, make sure you install all dependencies of geodjango which are mentioned in the link below
 
 https://docs.djangoproject.com/en/3.0/ref/contrib/gis/
 
 Once all settings are installed,
 Migrate to the project folder and run below for data migration
+```
+pip install -r requirements.txt
+```
 ```
 python manage.py migrate
 ```
@@ -28,4 +31,7 @@ python manage.py library_dataset
 ```
 ```
 python manage.py emergency_support
+```
+```
+python manage.py free_resources
 ```
