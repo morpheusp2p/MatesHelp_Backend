@@ -20,8 +20,8 @@ class Command(BaseCommand):
         # Bus routes,(23)Nearest train station(24),Category 1(25),Category 2(26),Category 3(27),
         # Category 4(28),Category 5(29),Category 6(30), Longitude(31),Latitude(32),Geocoded Location(33)
         csv_key = {
-            'LAT' : 31,
-            'LONG' : 32,
+            'LAT' : 32,
+            'LONG' : 31,
             'Suburb/Town': 5,
             'Address': 3,
             'Address2': 4,
