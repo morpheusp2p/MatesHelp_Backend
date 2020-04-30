@@ -3,6 +3,7 @@ venv/
 __pycache__/
 *.sqlite3
 *.sql
+*.DS_Store
 *.env
 .idea/
 *csr
