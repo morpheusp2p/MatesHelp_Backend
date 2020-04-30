@@ -5,6 +5,7 @@ __pycache__/
 *.sql
 *.env
 .idea/
+*csr
 /media/
 /static/
 /staticfiles/
