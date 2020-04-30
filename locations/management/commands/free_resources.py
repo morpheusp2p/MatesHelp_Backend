@@ -27,7 +27,15 @@ class Command(BaseCommand):
             'Address2': 4,
             'Website': 10,
             'Name': 0,
-            'Category': 25
+            'Category': 25,
+            'Description' : 2,
+            'Monday': 13,
+            'Tuesday': 14,
+            'Wednesday': 15,
+            'Thursday': 16,
+            'Friday': 17,
+            'Saturday': 18,
+            'Sunday': 19
         }
 
         with open(csvPath) as csvFile:
@@ -58,4 +66,15 @@ class Command(BaseCommand):
                     location_service.website = extracted_url[0]
                 location_service.suburb = entry[csv_key['Suburb/Town']]
                 location_service.type = csv_type
+                location_service.desc = entry[csv_key['Description']]
+                timing_json = {
+                    'Monday' : entry[csv_key['Monday']],
+                    'Tuesday' : entry[csv_key['Tuesday']],
+                    'Wednesday' : entry[csv_key['Wednesday']],
+                    'Thursday' : entry[csv_key['Thursday']],
+                    'Friday' : entry[csv_key['Friday']],
+                    'Saturday' : entry[csv_key['Saturday']],
+                    'Sunday' : entry[csv_key['Sunday']]
+                }
+                location_service.opening_days = timing_json
                 location_service.save()

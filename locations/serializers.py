@@ -13,4 +13,4 @@ class LocationSerializer(serializers.HyperlinkedModelSerializer):
     # Location serializer
     class Meta:
         model = Location
-        fields = ['id', 'location', 'name', 'type', 'website', 'suburb']
+        fields = ['id', 'location', 'name', 'type', 'website', 'suburb','desc','opening_days']
