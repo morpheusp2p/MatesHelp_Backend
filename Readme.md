@@ -23,16 +23,11 @@ Once all settings are installed,
 Migrate to the project folder and run below for data migration
 ```
 pip install -r requirements.txt
-```
-```
 python manage.py migrate
-```
-```
 python manage.py library_dataset
-```
-```
 python manage.py emergency_support
-```
-```
 python manage.py free_resources
+python manage.py centrelink
+python manage.py hospitals
+python manage.py needle_exchange
 ```
