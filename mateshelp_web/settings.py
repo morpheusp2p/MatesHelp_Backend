@@ -47,8 +47,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.gis',
     'locations',
+    'page_category',
     'rest_framework',
     'corsheaders',
+    'tinymce',
 ]
 
 MIDDLEWARE = [

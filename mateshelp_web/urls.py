@@ -37,5 +37,6 @@ urlpatterns = [
     path('',login_required(IndexView.as_view())),
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
-    url(r'^accounts/login/$',LoginView.as_view(template_name='admin/login.html'))
+    url(r'^accounts/login/$',LoginView.as_view(template_name='admin/login.html')),
+    path('tinymce/', include('tinymce.urls')),
 ]
