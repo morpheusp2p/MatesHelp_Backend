@@ -10,3 +10,6 @@ class Page(models.Model):
     banner_image = models.ImageField()
     description = HTMLField()
     categories = models.ManyToManyField(Type)
+
+    def __str__(self):
+        return self.name

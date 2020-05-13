@@ -3,4 +3,8 @@ from django.contrib import admin
 from .models import Page
 
 # Register your models here.
-admin.site.register(Page)
+class PageAdmin(admin.ModelAdmin):
+    model = Page
+    filter_horizontal = ('categories',)
+
+admin.site.register(Page, PageAdmin )
