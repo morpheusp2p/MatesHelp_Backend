@@ -1,16 +1,9 @@
 from rest_framework import serializers
 
-from .models import Location, Type
+from .models import Page
 
-class TypeSerializer(serializers.HyperlinkedModelSerializer):
+class PageSerializer(serializers.HyperlinkedModelSerializer):
     # Type serializer
     class Meta:
-        model = Type
-        fields = ['id','name']
-
-
-class LocationSerializer(serializers.HyperlinkedModelSerializer):
-    # Location serializer
-    class Meta:
-        model = Location
-        fields = ['id', 'location', 'name', 'type', 'website', 'suburb','desc','opening_days']
+        model = Page
+        fields = ['id','name','banner_image','description','categories']

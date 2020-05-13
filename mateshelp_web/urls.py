@@ -23,6 +23,7 @@ from django.contrib.auth.views import LoginView
 
 from rest_framework import routers
 from locations import  views
+from page_category import views as pageview
 
 class IndexView(TemplateView):
     template_name = 'dist/index.html'
@@ -31,6 +32,7 @@ class IndexView(TemplateView):
 router = routers.DefaultRouter()
 router.register(r'types', views.TypeViewSet)
 router.register(r'locations', views.LocationViewSet)
+router.register(r'pages', pageview.PageViewSet)
 
 # register build as root, api & admin urls
 urlpatterns = [
