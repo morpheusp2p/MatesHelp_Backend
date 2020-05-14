@@ -19,7 +19,8 @@ from django.urls import path, include
 from django.views.generic.base import TemplateView
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView
-
+from django.conf import settings
+from django.conf.urls.static import static
 
 from rest_framework import routers
 from locations import  views
@@ -41,4 +42,4 @@ urlpatterns = [
     path('api/', include(router.urls)),
     url(r'^accounts/login/$',LoginView.as_view(template_name='admin/login.html')),
     path('tinymce/', include('tinymce.urls')),
-]
+]+ static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

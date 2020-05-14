@@ -7,7 +7,7 @@ from tinymce.models import HTMLField
 # Create your models here.
 class Page(models.Model):
     name = models.CharField(max_length=250)
-    banner_image = models.ImageField()
+    banner_image = models.ImageField(upload_to = 'images/')
     description = HTMLField()
     categories = models.ManyToManyField(Type)
 
