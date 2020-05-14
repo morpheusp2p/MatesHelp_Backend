@@ -7,3 +7,4 @@ class PageSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Page
         fields = ['id','name','banner_image','description','categories']
+        fields = ['id','name','slug','banner_image','description','categories']
