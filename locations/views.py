@@ -64,6 +64,27 @@ class WithinBoxFilterBackend(filters.BaseFilterBackend):
 
         return queryset
 
+class TypeFilterBackend(filters.BaseFilterBackend):
+    """
+    Filter by type name
+    """
+
+    param = 'types'
+    title = _('Type')
+    description = _('Filter by one or more type ids.  To filter with multiple ids, use the following: types=1,2,3')
+    type = 'integer'
+
+    def filter_queryset(self, request, queryset, view):
+        if self.param not in request.query_params:
+            return queryset
+
+        try:
+            type_ids = request.query_params.get('types', None)
+            queryset = queryset.filter(type__in=type_ids)
+        except:
+            print("Invalid Type Parameter")
+        return queryset
+
 class TypeViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows Types to be viewed or edited.
@@ -78,7 +99,8 @@ class LocationViewSet(viewsets.ModelViewSet):
     API endpoint that allows locations to be viewed or edited.
     """
     filter_backends = [
-        WithinBoxFilterBackend
+        WithinBoxFilterBackend,
+        TypeFilterBackend
     ]
     queryset = Location.objects.all()
     serializer_class = LocationSerializer
