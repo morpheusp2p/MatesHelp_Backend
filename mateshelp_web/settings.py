@@ -152,7 +152,7 @@ parent_dir = os.path.abspath(os.path.dirname(__file__) + '/..')
 
 MEDIA_ROOT = os.path.join(parent_dir, 'media/')
 MEDIA_URL = '/media/'
-
+SECURE_SSL_REDIRECT = os.environ.get('SSL')
 
 # CORS Settings
 CORS_ORIGIN_ALLOW_ALL = True
