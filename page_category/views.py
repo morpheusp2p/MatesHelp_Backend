@@ -11,4 +11,5 @@ class PageViewSet(viewsets.ModelViewSet):
     """
     queryset = Page.objects.all().order_by('-id')
     serializer_class = PageSerializer
+    lookup_field = 'slug'
     # permission_classes = [permissions.IsAuthenticated]

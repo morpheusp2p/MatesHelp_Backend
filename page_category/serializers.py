@@ -7,3 +7,7 @@ class PageSerializer(serializers.ModelSerializer):
     class Meta:
         model = Page
         fields = ['id','name','slug','banner_image','description','categories']
+        lookup_field = 'slug'
+        extra_kwargs = {
+            'url': {'lookup_field': 'slug'}
+        }
