@@ -75,14 +75,9 @@ class TypeFilterBackend(filters.BaseFilterBackend):
     type = 'integer'
 
     def filter_queryset(self, request, queryset, view):
-        if self.param not in request.query_params:
-            return queryset
-
-        try:
-            type_ids = request.query_params.get('types', None)
-            queryset = queryset.filter(type__in=type_ids)
-        except:
-            print("Invalid Type Parameter")
+        type_ids = request.query_params.get('types', None)
+        type_ids = type_ids.split(',')
+        queryset = queryset.filter(type__in=type_ids)
         return queryset
 
 class TypeViewSet(viewsets.ModelViewSet):
