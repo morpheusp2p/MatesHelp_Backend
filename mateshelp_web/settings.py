@@ -153,7 +153,7 @@ if DEBUG:
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'locations/static'),
 )
 
 parent_dir = os.path.abspath(os.path.dirname(__file__) + '/..')
