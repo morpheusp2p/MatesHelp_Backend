@@ -10,6 +10,9 @@ from .models import Location, Type
 from .serializers import LocationSerializer, TypeSerializer
 
 class WithinBoxFilterBackend(filters.BaseFilterBackend):
+    """
+    Filter within a given box defined by two points (NE Longitude, NE Latitude, SW Lontigude, SW Latitude)
+    """
 
     param = 'ne'
     title = _('Within Box')
@@ -66,7 +69,7 @@ class WithinBoxFilterBackend(filters.BaseFilterBackend):
 
 class TypeFilterBackend(filters.BaseFilterBackend):
     """
-    Filter by type name
+    Filter by type id
     """
 
     param = 'types'
