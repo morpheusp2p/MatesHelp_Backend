@@ -31,7 +31,7 @@ load_dotenv(dotenv_path)
 SECRET_KEY = '6w-@213yac+gchjsc=jy=-*k$els#nnwd=0@f2mw^#uepx_@l8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG', '') 
+DEBUG = False
 
 
 # Application definition
