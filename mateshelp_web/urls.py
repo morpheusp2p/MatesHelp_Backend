@@ -27,7 +27,7 @@ from locations import  views
 from page_category import views as pageview
 
 class IndexView(TemplateView):
-    template_name = 'dist/index.html'
+    template_name = 'dist/homepage.html'
 
 # register api endpoints
 router = routers.DefaultRouter()
